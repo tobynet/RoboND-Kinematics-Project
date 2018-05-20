@@ -22,6 +22,11 @@
 [image1]: ./misc_images/misc1.png
 [image2]: ./misc_images/misc3.png
 [image3]: ./misc_images/misc2.png
+[Rx]: ./misc_images/R_x(alpha_{i-1}).png
+[Dx]: ./misc_images/D_x(a_{i-1}).png
+[Rz]: ./misc_images/R_z(theta_i).png
+[Dz]: ./misc_images/D_z(d_i).png
+[Ti-eq00]: ./misc_images/Ti-eq00.png "T^{i-1}_{i}=R_x(\alpha_{i-1}) D_x(a_{i-1}) R_z(\theta_i) D_z(d_i)"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/972/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
@@ -46,16 +51,20 @@ Here is an example of how to include an image in your writeup.
 
 #### 2. Using the DH parameter table you derived earlier, create individual transformation matrices about each joint. In addition, also generate a generalized homogeneous transform between base_link and gripper_link using only end-effector(gripper) pose.
 
-Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
----   | ---        | ---    | ---    | ---
-0->1  | 0          | 0      | d₁     | θ₁
-1->2  | -π/2       | a₁     | 0      | θ₂-π/2
-2->3  | 0          | a₂     | 0      | θ₃
-3->4  | -π/2       | -a₃    | d₂     | θ₄
-4->5  | π/2        | 0      | 0      | θ₅
-5->6  | -π/2       | 0      | 0      | θ₆
-6->EE | 0          | 0      | d₃     | 0
+![Ti-eq00]
 
+|     | ![Rx]      | ![Dx]  | ![Rz]    | ![Dz]
+---   | ---        | ---    | ---      | ---
+Links | alpha(i-1) | a(i-1) | theta(i) | d_i
+0->1  | 0          | 0      | θ₁       | d₁
+1->2  | -π/2       | a₁     | θ₂-π/2   | 0
+2->3  | 0          | a₂     | θ₃       | 0
+3->4  | -π/2       | -a₃    | θ₄       | d₂
+4->5  | π/2        | 0      | θ₅       | 0
+5->6  | -π/2       | 0      | θ₆       | 0
+6->EE | 0          | 0      | 0        | d₃
+
+> ⚠ **Swapped columns between `theta(i)` and `d_i`** to coincident with the `Ti` expression.
 
 #### 3. Decouple Inverse Kinematics problem into Inverse Position Kinematics and inverse Orientation Kinematics; doing so derive the equations to calculate all individual joint angles.
 
