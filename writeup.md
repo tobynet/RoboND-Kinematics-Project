@@ -55,14 +55,14 @@ Here is an example of how to include an image in your writeup.
 
 |     | ![Rx]      | ![Dx]  | ![Rz]    | ![Dz]
 ---   | ---        | ---    | ---      | ---
-Links | alpha(i-1) | a(i-1) | theta(i) | d_i
-0->1  | 0          | 0      | θ₁       | d₁
-1->2  | -π/2       | a₁     | θ₂-π/2   | 0
-2->3  | 0          | a₂     | θ₃       | 0
-3->4  | -π/2       | -a₃    | θ₄       | d₂
+Links | alpha(i-1) | a(i-1) | theta(i) | d(i)
+0->1  | 0          | 0      | θ₁       | 0.33+0.42=0.75
+1->2  | -π/2       | 0.35   | θ₂-π/2   | 0
+2->3  | 0          | 1.25   | θ₃       | 0
+3->4  | -π/2       | -0.054 | θ₄       | 0.96+0.54=1.5
 4->5  | π/2        | 0      | θ₅       | 0
 5->6  | -π/2       | 0      | θ₆       | 0
-6->EE | 0          | 0      | 0        | d₃
+6->EE | 0          | 0      | 0        | 0.193+0.11=0.303
 
 > ⚠ **Swapped columns between `theta(i)` and `d_i`** to coincident with the `Ti` expression.
 
