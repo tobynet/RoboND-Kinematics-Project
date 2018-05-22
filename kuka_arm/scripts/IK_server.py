@@ -18,6 +18,7 @@ from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 from geometry_msgs.msg import Pose
 from mpmath import *
 from sympy import *
+from time import time
 
 # Make Homegeneous Matrix from DH parameters 
 def matrix_from(alpha, a, q, d):
@@ -69,6 +70,7 @@ def handle_calculate_IK(req):
         print ("No valid poses received")
         return -1
     else:
+        start_time = time()
 
         ### Your FK code here
         # Create symbols
@@ -122,6 +124,8 @@ def handle_calculate_IK(req):
         # Initialize service response
         joint_trajectory_list = []
         for x in xrange(0, len(req.poses)):
+            start_each_time = time()
+
             # IK code starts here
             joint_trajectory_point = JointTrajectoryPoint()
 
@@ -200,12 +204,14 @@ def handle_calculate_IK(req):
             theta4, theta5, theta6 = euler_angles_from_rotation_matrix(rot3_6)
             #
             ###
+            rospy.loginfo("  Each time[%d]: %04.4f seconds" % (x, time()-start_each_time))
 
             # Populate response for the IK request
             # In the next line replace theta1,theta2...,theta6 by your joint angle variables
             joint_trajectory_point.positions = [theta1, theta2, theta3, theta4, theta5, theta6]
             joint_trajectory_list.append(joint_trajectory_point)
 
+        rospy.loginfo("  Total run time: %04.4f seconds" % (time()-start_time))
         rospy.loginfo("length of Joint Trajectory List: %s" % len(joint_trajectory_list))
         return CalculateIKResponse(joint_trajectory_list)
 
