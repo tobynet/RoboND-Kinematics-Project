@@ -13,9 +13,10 @@
   → **I tlearned it in the course and tried demo**.
 4. ✅ Launch in [demo mode](https://classroom.udacity.com/nanodegrees/nd209/parts/7b2fd2d7-e181-401e-977a-6158c77bf816/modules/8855de3f-2897-46c3-a805-628b5ecf045b/lessons/91d017b1-4493-4522-ad52-04a74a01094c/concepts/ae64bb91-e8c4-44c9-adbe-798e8f688193).
   → **I tried it.**
-5. DOING ✍️🤔: Perform Kinematic Analysis for the robot following the [project rubric](https://review.udacity.com/#!/rubrics/972/view).
-6. Fill in the `IK_server.py` with your Inverse Kinematics code. 
-
+5. ✅ Perform Kinematic Analysis for the robot following the [project rubric](https://review.udacity.com/#!/rubrics/972/view).
+  → **I read it.**
+6. ✅ Fill in the `IK_server.py` with your Inverse Kinematics code. 
+  → OK. But too slow...🤔
 
 [//]: # (Image References)
 
