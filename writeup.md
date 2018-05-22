@@ -33,6 +33,10 @@
 [Dz]: ./misc_images/D_z(d_i).png
 [Ti-eq00]: ./misc_images/Ti-eq00.png "T^{i-1}_{i}=R_x(\alpha_{i-1}) D_x(a_{i-1}) R_z(\theta_i) D_z(d_i)"
 [logger]: ./misc_images/logger.gif
+[fig1]: ./misc_images/fig1.png
+[fig1_angles]: ./misc_images/fig1_angles.png
+[fig2]: ./misc_images/fig2.png
+[fig3]: ./misc_images/fig3.png
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/972/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
@@ -74,13 +78,44 @@ Links | alpha(i-1) | a(i-1) | theta(i) | d(i)
 
 #### 3. Decouple Inverse Kinematics problem into Inverse Position Kinematics and inverse Orientation Kinematics; doing so derive the equations to calculate all individual joint angles.
 
-And here's where you can draw out and show your math for the derivation of your theta angles. 
+And here's where you can draw out and show your math for the derivation of your theta angles.
 
-* TODO: Add fig1 with code
-* TODO: Add fig2 with code
-* TODO: Add fig3 with code
+**theta1, theta2, theta3** :
 
-![alt text][image2]
+1. Obtain `fig3_side`s(a,b,c)
+
+    fig3:
+
+    ![fig3][fig3]
+
+    📝 fig2_b == fig3_c
+
+1. Obtain `fig2 side`s(a,b,c)
+
+    fig2:
+
+    ![fig2][fig2]
+
+    📝 fig1_b == fig2_c
+
+
+1. Obtain `fig1 side`s(a,b,c)
+
+    fig1:
+
+    ![fig1][fig1]
+
+1. Obtain angles(`theta1`, `theta2`, `theta3`).
+
+    fig1 angles:
+
+    ![fig1_angles][fig1_angles]
+
+1. (The rest of the code is `IK_server.py` or `IK_debug.py`)
+
+**theta4, theta5, theta6** :
+
+![thetas](misc_images/theta_4_5_6_ex.png)
 
 ### Project Implementation
 
@@ -111,8 +146,8 @@ And here's where you can draw out and show your math for the derivation of your 
 
   * Do the test enough in the `IK_debug.py`.
 
-  * Minimum code: 
-  
+  * Minimum code:
+
     → Avoid excessive optimizations due to readable.
 
   * Add the logging code for the performance tuning.
@@ -140,10 +175,3 @@ And here's where you can draw out and show your math for the derivation of your 
     * Motion, Motion Planning:
 
       → Is updateable areas too  by us? 🤔 
-
-Here I'll talk about the code, what techniques I used, what worked and why, where the implementation might fail and how I might improve it if I were going to pursue this project further.  
-
-
-And just for fun, another example image:
-![alt text][image3]
-
