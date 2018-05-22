@@ -3,6 +3,14 @@
 
 ⇒ 📄 [Writeup is `writeup.md`](./writeup.md).
 
+----
+
+[![Kinematics project video](./misc_images/video-snapshot00.jpg)](https://youtu.be/J0nR4XqxEBI)
+
+[📄 Click on image to see the simulator video.](https://youtu.be/J0nR4XqxEBI)
+
+----
+
 Make sure you are using robo-nd VM or have Ubuntu+ROS installed locally.
 
 ### One time Gazebo setup step:
