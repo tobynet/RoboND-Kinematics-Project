@@ -65,6 +65,8 @@ def to_homogenous(r, t = None):
 
 
 def test_code(test_case):
+    if len(test_case) <= 0: return
+
     ## Set up code
     ## Do not modify!
     x = 0
@@ -287,6 +289,5 @@ def test_code(test_case):
 
 if __name__ == "__main__":
     # Change test case number for different scenarios
-    test_case_number = 1
-
-    test_code(test_cases[test_case_number])
+    for i in test_cases:
+        test_code(test_cases[i])
